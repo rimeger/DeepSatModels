@@ -10,11 +10,10 @@ T31TFM_1618:
 
 # PASTIS24 benchmark -------------------------------------------------------------------------------------------------
 PASTIS24_fold1:
-    PASTIS24_fold1:
-        basedir: ".../PASTIS24"
-        paths_train: ".../fold-paths/folds_1_123_paths.csv"
-        paths_eval: ".../fold-paths/fold_4_paths.csv"
-        paths_test: ".../fold-paths/fold_5_paths.csv"
+    basedir: ".../PASTIS24"
+    paths_train: ".../fold-paths/folds_1_123_paths.csv"
+    paths_eval: ".../fold-paths/fold_4_paths.csv"
+    paths_test: ".../fold-paths/fold_5_paths.csv"
 
 PASTIS24_fold2:
     basedir: ".../PASTIS24"
@@ -40,3 +39,37 @@ PASTIS24_fold5:
     paths_eval: ".../fold-paths/fold_3_paths.csv"
     paths_test: ".../fold-paths/fold_4_paths.csv"
 # ------------------------------------------------------------------------------------------------------------------
+
+# PASTIS48 benchmark -------------------------------------------------------------------------------------------------
+PASTIS48_fold1:
+    basedir: "/mnt/data/studentmf/PASTIS48"
+    paths_train: "/mnt/data/studentmf/PASTIS48/fold-paths/folds_1_123_paths.csv"
+    paths_eval: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_4_paths.csv"
+    paths_test: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_5_paths.csv"
+
+PASTIS48_fold2:
+    basedir: "/mnt/data/studentmf/PASTIS48"
+    paths_train: "/mnt/data/studentmf/PASTIS48/fold-paths/folds_2_234_paths.csv"
+    paths_eval: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_5_paths.csv"
+    paths_test: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_1_paths.csv"
+
+PASTIS48_fold3:
+    basedir: "/mnt/data/studentmf/PASTIS48"
+    paths_train: "/mnt/data/studentmf/PASTIS48/fold-paths/folds_3_345_paths.csv"
+    paths_eval: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_1_paths.csv"
+    paths_test: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_2_paths.csv"
+
+PASTIS48_fold4:
+    basedir: "/mnt/data/studentmf/PASTIS48"
+    paths_train: "/mnt/data/studentmf/PASTIS48/fold-paths/folds_4_451_paths.csv"
+    paths_eval: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_2_paths.csv"
+    paths_test: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_3_paths.csv"
+
+PASTIS48_fold5:
+    basedir: "/mnt/data/studentmf/PASTIS48"
+    paths_train: "/mnt/data/studentmf/PASTIS48/fold-paths/folds_5_512_paths.csv"
+    paths_eval: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_3_paths.csv"
+    paths_test: "/mnt/data/studentmf/PASTIS48/fold-paths/fold_4_paths.csv"
+# ------------------------------------------------------------------------------------------------------------------
+
+

@@ -61,6 +61,9 @@ class SatImDataset(Dataset):
 
         with open(img_name, 'rb') as handle:
             sample = pickle.load(handle, encoding='latin1')
+            print("IMAGE SHAPE:", sample["image"].shape)
+            print("LABEL SHAPE:", sample["label"].shape)
+            print("MAX:", torch.cuda.memory_allocated() / 1024**3, "GB")
 
         if self.transform:
             sample = self.transform(sample)

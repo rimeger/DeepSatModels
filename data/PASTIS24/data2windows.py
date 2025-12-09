@@ -1,3 +1,4 @@
+import ast
 import geopandas as gpd
 import os
 import numpy as np
@@ -53,7 +54,13 @@ if __name__ == "__main__":
         img = np.load(os.path.join(rootdir, 'DATA_S2/S2_%d.npy' % meta_patch['ID_PATCH'].iloc[i]))
         lab = np.load(os.path.join(rootdir, 'ANNOTATIONS/TARGET_%d.npy' % meta_patch['ID_PATCH'].iloc[i]))
         ids = np.load(os.path.join(rootdir, 'ANNOTATIONS/ParcelIDs_%d.npy' % meta_patch['ID_PATCH'].iloc[i]))
-        dates = meta_patch['dates-S2'].iloc[i]
+        dates_str = meta_patch['dates-S2'].iloc[i]
+
+        # Convert string representation of list into a real list
+        if isinstance(dates_str, str):
+            dates = ast.literal_eval(dates_str)
+        else:
+            dates = list(dates_str)
         doy = np.array([get_doy(d) for d in dates.values()])
         idx = np.argsort(doy)
         img = img[idx]
@@ -61,7 +68,7 @@ if __name__ == "__main__":
         unfolded_images = unfold_reshape(torch.tensor(img), HWout).numpy()
         unfolded_labels = unfold_reshape(torch.tensor(lab), HWout).numpy()
 
-        for j in unfolded_images.shape[0]:
+        for j in range(unfolded_images.shape[0]):
             sample = {'img': unfolded_images[j], 'labels': unfolded_labels[j], 'doy': doy}
 
             with open(os.path.join(savedir, "%d_%d.pickle" % (meta_patch['ID_PATCH'].iloc[i], j)), "wb") as output_file:
